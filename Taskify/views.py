@@ -81,13 +81,13 @@ def handleTask(request, pk):
             if task.status:
                 task.status = False
                 task.save()
-                messages.success(request, f"Changed task#{
-                                 task.id}  status for completed")
+                messages.success(request, f"""Changed task#{
+                                 task.id}  status for completed""")
             else:
                 task.status = True
                 task.save()
-                messages.success(request, f"Changed task#{
-                                 task.id}  status for uncomplted")
+                messages.success(request, f"""Changed task#{
+                                 task.id}  status for uncomplted""")
             return redirect("home-page")
         except Task.DoesNotExist:
             messages.error(request, "Task doesn't exists")
